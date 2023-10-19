@@ -12,7 +12,7 @@ orca_pdf <- function(filename, plot)
   nameFile <- basename(filename)
   nameFile <- maybe_add_file_extension(nameFile, "pdf")
   directory <- paste0(dirname(filename), sep = "/")
-  withr::with_dir(directory, plotly::orca(plot, nameFile))
+  withr::with_dir(directory, plotly::orca(plot, nameFile, more_args = c('--disable-gpu')))
 }
 
 
